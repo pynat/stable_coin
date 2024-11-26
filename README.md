@@ -6,18 +6,18 @@ This repository contains Python scripts for fetching, processing, and saving cry
 
 The project includes models such as Linear Regression (LR), Decision Trees (DT), Random Forest (RF), and XGBoost.
 
-stable_coin/
-├── notebook.ipynb/ 
-│   ├── get_coins              # Fetches and processes cryptocurrency data
-│   ├── get_stocks             # Fetches and processes stock data
-│   ├── feature engineering    # Adds derived metrics for ML models
-│   ├── model evaluation       # Compares models and saves the best as a pickle file
-├── train.py                   # Trains the best model
-├── predict.py                 # Flask application for making predictions
-├── requirements.txt           # List of required Python packages
-├── environment.yml            # Conda environment file
-├── LICENSE  
-├── Dockerfile                 # For containerized deployment
+stable_coin/          
+├── notebook.ipynb/       
+│   ├── get_coins              # Fetches and processes cryptocurrency data     
+│   ├── get_stocks             # Fetches and processes stock data      
+│   ├── feature engineering    # Adds derived metrics for ML models      
+│   ├── model evaluation       # Compares models and saves the best as a pickle file      
+├── train.py                   # Trains the best model            
+├── predict.py                 # Flask application for making predictions       
+├── requirements.txt           # List of required Python packages       
+├── environment.yml            # Conda environment file     
+├── LICENSE      
+├── Dockerfile                 # For containerized deployment    
              
 
 
