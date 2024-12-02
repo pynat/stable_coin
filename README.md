@@ -6,7 +6,7 @@ The repository contains Python scripts for fetching, processing, and saving cryp
 
 The project includes models such as Linear Regression (LR), Decision Trees (DT), Random Forest (RF), and XGBoost.
 
-
+```bash
 stable_coin/  
 ├── images/                                     # Contains the images that are generated through EDA     
 │   ├── boxplot_usdc.png      
@@ -25,7 +25,7 @@ stable_coin/
 ├── environment.yml                             # Conda environment file     
 ├── LICENSE      
 ├── Dockerfile                                  # For containerized deployment    
-
+```
 
 **Data Exploration:**
 
@@ -35,7 +35,7 @@ To better understand the data distribution and identify potential outliers, a bo
 
 ![Boxplot](images/boxplot_usdc.png)
 
-Key Insights from Data Exploration Boxplot of USDC Close Prices:
+Key Insights from Data Exploration Boxplot of USDC Close Prices:    
 USDC prices mostly stay close to 1, indicating good stability as a stablecoin.
 Outliers around 0.999 and 1.001 could be caused by short-term market fluctuations or external events.
 The narrow Interquartile Range (IQR) shows minimal price fluctuations, suggesting consistent trading.
@@ -50,7 +50,7 @@ Consecutive outliers point to specific periods of market stress or external even
 The following plot shows the price change over time for USDC in the filtered period from August to October 2024:
 
 ![Price Change Over Time for USDC](images/price_change_over_time.png)
-Key observations:   
+Key observations:     
 Price fluctuates slightly around the $1 mark, confirming USDC's stablecoin nature. Periods of slight instability (e.g., price > $1.001 or < $0.999) may indicate unusual market activity or temporary imbalances. Spikes at specific points (e.g., late August, mid-September) might be linked to external events or liquidity shifts.
 
 
@@ -59,7 +59,7 @@ Price fluctuates slightly around the $1 mark, confirming USDC's stablecoin natur
 This histogram shows the distribution of price changes for USDC, highlighting the frequency of different price change values over the dataset.
 
 ![Price Change and its Correlation with Volume for USDC](images/price_change_correlation_with_volume.png)
-Key Insights from Data Exploration Boxplot of USDC Close Prices:  
+Key Insights from Data Exploration Boxplot of USDC Close Prices:     
 The scatter plot shows the relationship between price change and trading volume for USDC/USDT. Most price changes are centered around 0, indicating stable behavior, even with varying volumes.  
 There is a notable outlier with very high volume (~4e8) and a significant price change (~0.08). No clear linear correlation between volume and price change is observed, suggesting external factors might influence price deviations more than volume alone.
 
@@ -67,7 +67,7 @@ There is a notable outlier with very high volume (~4e8) and a significant price 
 
 ![Distribution of Price Change](images/distribution_price_change.png)
 
-Key observations:
+Key observations:    
 Most price changes are concentrated around 0, indicating that USDC's price remains stable, as expected for a stablecoin. The high frequency of 0 price changes confirms minimal fluctuations for USDC in most cases. Symmetric distribution: Price changes are evenly spread on both sides, showing that deviations (positive and negative) are rare and balanced. Outliers: Smaller bars farther from 0 represent rare, larger price changes, which are atypical.  
 This validates USDC's stability for that time frame. The rare outliers might be caused by extreme market events or technical issues.
 
