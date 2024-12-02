@@ -74,9 +74,9 @@ This validates USDC's stability for that time frame. The rare outliers might be 
 
 
 
-**Datasets**
+**Datasets**     
 Stablecoin Data:
-[Link to Cryptocurrencies Dataset](https://drive.google.com/file/d/18IzkQYiodTNiIxmnG7lGrrdb-akB0C-l/view?)usp=sharing
+[Link to Cryptocurrencies Dataset](https://drive.google.com/file/d/18IzkQYiodTNiIxmnG7lGrrdb-akB0C-l/view?usp=sharing)
 
 Stock Data:
 [Link to Stocks Dataset](https://drive.google.com/file/d/1d4PRGApTcuQaCAj16dOc9k79P3M2PaYF/view?usp=sharing)
