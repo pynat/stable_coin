@@ -7,18 +7,24 @@ The repository contains Python scripts for fetching, processing, and saving cryp
 The project includes models such as Linear Regression (LR), Decision Trees (DT), Random Forest (RF), and XGBoost.
 
 
-stable_coin/          
+stable_coin/  
+├── images/                                     # Contains the images that are generated through EDA
+│   ├── boxplot_usdc.png
+│   ├── price_change_over_time.png
+│   ├── price_change_correlation_with_volume.png
+│   ├── distribution_price_change.png
+├── README.md                   
 ├── notebook.ipynb/       
-│   ├── get_coins              # Fetches and processes cryptocurrency data     
-│   ├── get_stocks             # Fetches and processes stock data      
-│   ├── feature engineering    # Adds derived metrics for ML models      
-│   ├── model evaluation       # Compares models and saves the best as a pickle file      
-├── train.py                   # Trains the best model            
-├── predict.py                 # Flask application for making predictions       
-├── requirements.txt           # List of required Python packages       
-├── environment.yml            # Conda environment file     
+│   ├── get_coins                               # Fetches and processes cryptocurrency data     
+│   ├── get_stocks                              # Fetches and processes stock data      
+│   ├── feature engineering                     # Adds derived metrics for ML models      
+│   ├── model evaluation and tuning             # Compares models and saves the best as a pickle file      
+├── train.py                                    # Trains the best model            
+├── predict.py                                  # Flask application for making predictions       
+├── requirements.txt                            # List of required Python packages       
+├── environment.yml                             # Conda environment file     
 ├── LICENSE      
-├── Dockerfile                 # For containerized deployment    
+├── Dockerfile                                  # For containerized deployment    
 
 
 **Data Exploration:**
