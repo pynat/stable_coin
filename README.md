@@ -8,7 +8,7 @@ The project includes models such as Linear Regression (LR), Decision Trees (DT),
 
 
 stable_coin/  
-├── images/                                     # Contains the images that are generated through EDA
+├── images/                                     # Contains the images that are generated through EDA     
 │   ├── boxplot_usdc.png      
 │   ├── price_change_over_time.png      
 │   ├── price_change_correlation_with_volume.png      
