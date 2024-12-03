@@ -29,13 +29,25 @@ stable_coin/
 
 **Data Exploration:**
 
+
+## Key Findings Matrix Correlation Stablecoin:   
+1. A strong positive correlation (`0.97`) exists between `open` and `close` prices, highlighting low intraday volatility.    
+2. `price_change` and `growth_1h` exhibit a strong negative correlation (`-0.82`), suggesting inverse relationships between these metrics.      
+3. Moderate correlation (`0.76`) between `volume` and `intraday_range` indicates that higher trading volumes are associated with larger intraday price movements.    
+4. `7d_volatility` shows weak correlations with most features, indicating its independence from short-term trading metrics.   
+
+![Boxplot](images/correlation_matrix_stablecoin.png)        
+
+
+
 ## Boxplot for Closing Prices for USDC
 
 To better understand the data distribution and identify potential outliers, a boxplot of the closing prices for USDC was generated:
 
-![Boxplot](images/boxplot_usdc.png)     
+![Boxplot](images/boxplot_usdc.png)   
+         
 
-Key Insights from Data Exploration Boxplot of USDC Close Prices:    
+Key observations:       
 USDC prices mostly stay close to 1, indicating good stability as a stablecoin.
 Outliers around 0.999 and 1.001 could be caused by short-term market fluctuations or external events.
 The narrow Interquartile Range (IQR) shows minimal price fluctuations, suggesting consistent trading.
@@ -49,7 +61,8 @@ Consecutive outliers point to specific periods of market stress or external even
 
 The following plot shows the price change over time for USDC in the filtered period from August to October 2024:
 
-![Price Change Over Time for USDC](images/price_change_over_time.png)       
+![Price Change Over Time for USDC](images/price_change_over_time.png)  
+            
 Key observations:     
 Price fluctuates slightly around the $1 mark, confirming USDC's stablecoin nature. Periods of slight instability (e.g., price > $1.001 or < $0.999) may indicate unusual market activity or temporary imbalances. Spikes at specific points (e.g., late August, mid-September) might be linked to external events or liquidity shifts.
 
@@ -58,15 +71,16 @@ Price fluctuates slightly around the $1 mark, confirming USDC's stablecoin natur
 
 This histogram shows the distribution of price changes for USDC, highlighting the frequency of different price change values over the dataset.
 
-![Price Change and its Correlation with Volume for USDC](images/price_change_correlation_with_volume.png)      
-Key Insights from Data Exploration Boxplot of USDC Close Prices:     
+![Price Change and its Correlation with Volume for USDC](images/price_change_correlation_with_volume.png) 
+            
+Key observations:        
 The scatter plot shows the relationship between price change and trading volume for USDC/USDT. Most price changes are centered around 0, indicating stable behavior, even with varying volumes.  
 There is a notable outlier with very high volume (~4e8) and a significant price change (~0.08). No clear linear correlation between volume and price change is observed, suggesting external factors might influence price deviations more than volume alone.
 
 ## Distribution of Price Change for USDC
 
 ![Distribution of Price Change](images/distribution_price_change.png)      
-
+        
 Key observations:    
 Most price changes are concentrated around 0, indicating that USDC's price remains stable, as expected for a stablecoin. The high frequency of 0 price changes confirms minimal fluctuations for USDC in most cases. Symmetric distribution: Price changes are evenly spread on both sides, showing that deviations (positive and negative) are rare and balanced. Outliers: Smaller bars farther from 0 represent rare, larger price changes, which are atypical.  
 This validates USDC's stability for that time frame. The rare outliers might be caused by extreme market events or technical issues.
@@ -102,10 +116,11 @@ Feature Engineering: Derived metrics such as moving averages (7d, 30d), volatili
 
 Models:
 
-Linear Regression (LR)
-Decision Trees (DT)
-Random Forest (RF)
-XGBoost (Primary Model)
+Linear Regression (LR)    
+![ROC Curve Logistic Regression](images/roc_curve_lr.png)    
+Decision Trees (DT)   
+Random Forest (RF)   
+XGBoost (Primary Model)    
 Evaluation:
 
 Metrics: Accuracy, Precision, Recall, and AUC.
