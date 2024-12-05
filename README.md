@@ -27,10 +27,10 @@ stable_coin/
 ├── Dockerfile                                  # For containerized deployment    
 ```
 
-**Data Exploration:**
+## Data Exploration:
 
 
-## Key Findings Matrix Correlation Stablecoin:   
+**Key Findings Matrix Correlation Stablecoin:**    
 1. A strong positive correlation (`0.97`) exists between `open` and `close` prices, highlighting low intraday volatility.    
 2. `price_change` and `growth_1h` exhibit a strong negative correlation (`-0.82`), suggesting inverse relationships between these metrics.      
 3. Moderate correlation (`0.76`) between `volume` and `intraday_range` indicates that higher trading volumes are associated with larger intraday price movements.    
@@ -40,7 +40,7 @@ stable_coin/
 
 
 
-## Boxplot for Closing Prices for USDC
+**Boxplot for Closing Prices for USDC** 
 
 To better understand the data distribution and identify potential outliers, a boxplot of the closing prices for USDC was generated:
 
@@ -57,7 +57,7 @@ Outliers appear in clusters, possibly due to market distortions or technical iss
 Consecutive outliers point to specific periods of market stress or external events, such as political factors (presidential election).
 
 
-## Price Change over Time for USDC
+**Price Change over Time for USDC** 
 
 The following plot shows the price change over time for USDC in the filtered period from August to October 2024:
 
@@ -67,7 +67,7 @@ Key observations:
 Price fluctuates slightly around the $1 mark, confirming USDC's stablecoin nature. Periods of slight instability (e.g., price > $1.001 or < $0.999) may indicate unusual market activity or temporary imbalances. Spikes at specific points (e.g., late August, mid-September) might be linked to external events or liquidity shifts.
 
 
-## Price Changes and its correlation with Volume for USDC
+**Price Changes and its correlation with Volume for USDC** 
 
 This histogram shows the distribution of price changes for USDC, highlighting the frequency of different price change values over the dataset.
 
@@ -77,7 +77,7 @@ Key observations:
 The scatter plot shows the relationship between price change and trading volume for USDC/USDT. Most price changes are centered around 0, indicating stable behavior, even with varying volumes.  
 There is a notable outlier with very high volume (~4e8) and a significant price change (~0.08). No clear linear correlation between volume and price change is observed, suggesting external factors might influence price deviations more than volume alone.
 
-## Distribution of Price Change for USDC
+**Distribution of Price Change for USDC** 
 
 ![Distribution of Price Change](images/distribution_price_change.png)      
         
