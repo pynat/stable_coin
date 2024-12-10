@@ -4,7 +4,7 @@ This project aims to explore the volatility of stablecoins, specifically USDC/US
 
 The repository contains Python scripts for fetching, processing, and saving cryptocurrency and stock market data. It uses APIs (Binance for crypto, Yahoo Finance for stocks) to retrieve hourly data, enrich it with calculated metrics, and export the data as CSV files for analysis.
 
-The project includes models such as Linear Regression (LR), Decision Trees (DT), Random Forest (RF), and XGBoost.
+The project includes models such as Logistic Regression (LR), Decision Trees (DT), Random Forest (RF), and XGBoost.
 
 ```bash
 stable_coin/  
@@ -105,7 +105,7 @@ Merged Data with Features:
 Crypto Data Fetcher: Retrieves OHLC data for selected cryptocurrencies and stablecoins using the Binance API, with additional derived metrics and timezone conversion.
 Stock Data Fetcher: Fetches hourly stock data for predefined tickers using Yahoo Finance, enriching the data with calculated metrics.
 USDC/USDT Analysis: Focuses on analyzing the stablecoin USDC/USDT, examining factors influencing its price growth, and using machine learning models to predict positive growth (y).
-Machine Learning Models: Implements models like Linear Regression (LR), Decision Trees (DT), Random Forest (RF), and XGBoost to predict price trends and growth of USDC/USDT.
+Machine Learning Models: Implements models like Logistic Regression (LR), Decision Trees (DT), Random Forest (RF), and XGBoost to predict price trends and growth of USDC/USDT.
 Flask API: A Flask-based API is included to interact with the data programmatically (optional, for deployment).
 Docker Support: A Dockerfile is provided for easy deployment in containerized environments.
 
@@ -116,16 +116,55 @@ Feature Engineering: Derived metrics such as moving averages (7d, 30d), volatili
 
 Models:
 
-Linear Regression (LR)    
-![ROC Curve Logistic Regression](images/roc_curve_lr.png)    
+Logistic Regression (LR)    
+![ROC Curve Logistic Regression](images/roc_curve_lr.png)   
+Feature Analysis:   
+The most impactful features based on accuracy changes:   
+30d_ma (+2.13%)   
+macd_hist (+1.09%)   
+mom (+0.95%)   
+open (+1.42%)   
+Observations:    
+Certain tickers (e.g., HEI, KGC, COIN) slightly improve model accuracy, each contributing a +0.0067 difference.
+The tickers HEI (aerospace/defense), KGC (gold mining), and COIN (crypto exchange) impact model accuracy. Their relevance likely stems from macroeconomic ties to stablecoin behavior: HEI reflects economic trends, KGC aligns with safe-haven dynamics, and COIN directly links to the crypto sector.    
+  
+The model struggles to predict Class 1 (minority class), as reflected by low recall and F1-scores.
+Feature engineering shows that moving averages (30d_ma) and momentum indicators (macd_hist, mom) significantly contribute to model performance.   
+   
 Decision Trees (DT)   
-Random Forest (RF)   
-XGBoost (Primary Model)    
-Evaluation:
+![Auc vs. Max Depth for Decision Tree](images/auc_vs_max_depth_dt.png)       
+Validation Set Performance:   
+Accuracy: 53.0%  
+ROC-AUC: 0.530  
+Confusion Matrix:  
+True Negatives: 2506, False Positives: 2167  
+False Negatives: 2093, True Positives: 2298  
+F1-Score: 0.52  
+Key Observations:  
+Optimal AUC achieved through regularization with high min_samples_leaf (500) and moderate tree depth (6). Overfitting observed with low min_samples_leaf values or very deep trees. Balanced precision and recall for both classes with improved generalization.
 
-Metrics: Accuracy, Precision, Recall, and AUC.
-Dataset Split: 80% for training, 20% for testing.
-Validation: 5-fold cross-validation for XGBoost.
+
+
+Random Forest (RF)  
+![Auc vs. Number of Trees for Random Forest](images/auc_vs_num_trees_diff_max_depth_rf.png)    
+Validation Set Performance:   
+AUC: 0.56 (indicating slightly better-than-random performance).  
+Marginal improvements observed as n_estimators increase, with diminishing returns beyond 150 trees.  
+Key Observations:  
+Lower min_samples_leaf (1-3) values lead to overfitting and poor generalization.
+Higher min_samples_leaf (≥50) oversimplifies the model, reducing performance.
+Moderate max_depth (10) avoids overfitting while capturing relevant patterns.
+The model achieves optimal performance by balancing flexibility (min_samples_leaf = 5) with ensemble size.   
+
+
+XGBoost (Primary Model)   
+![Precision-Recall vs Threshold](images/precision_recall_xgboost.png)    
+Evaluation:  
+Time-based features (month, day, hour) suggest the model leverages seasonal patterns. Volatility indicates the model uses market fluctuations for predictions.  
+Stock tickers such as DOCN (DigitalOcean), GRAB (Grab Holdings), and SMCI (Super Micro Computer) highlight a connection between traditional finance and crypto.  
+DOCN: As a cloud infrastructure company, its stock volatility or market sentiment could reflect broader financial trends influencing crypto markets.
+GRAB: A Southeast Asian tech company, its market performance may signal regional economic trends affecting investor sentiment, including in crypto.
+SMCI: Specializing in high-performance computing, its stock could correlate with tech market trends, influencing investor confidence and risk sentiment in both traditional and crypto markets.  
 
 
 ### Installation
