@@ -57,16 +57,6 @@ Outliers appear in clusters, possibly due to market distortions or technical iss
 Consecutive outliers point to specific periods of market stress or external events, such as political factors (presidential election).
 
 
-**Price Change over Time for USDC** 
-
-The following plot shows the price change over time for USDC in the filtered period from August to October 2024:
-
-![Price Change Over Time for USDC](images/price_change_over_time.png)  
-            
-Key observations:     
-Price fluctuates slightly around the $1 mark, confirming USDC's stablecoin nature. Periods of slight instability (e.g., price > $1.001 or < $0.999) may indicate unusual market activity or temporary imbalances. Spikes at specific points (e.g., late August, mid-September) might be linked to external events or liquidity shifts.
-
-
 **Price Changes and its correlation with Volume for USDC** 
 
 This histogram shows the distribution of price changes for USDC, highlighting the frequency of different price change values over the dataset.
@@ -157,8 +147,8 @@ Moderate max_depth (10) avoids overfitting while capturing relevant patterns.
 The model achieves optimal performance by balancing flexibility (min_samples_leaf = 5) with ensemble size.   
 
 
-XGBoost (Primary Model)   
-![Precision-Recall vs Threshold](images/precision_recall_xgboost.png)    
+XGBoost     
+![Feature Importance For XGBOOST](images/feature_importance_xgboost.png)    
 Evaluation:  
 Time-based features (month, day, hour) suggest the model leverages seasonal patterns. Volatility indicates the model uses market fluctuations for predictions.  
 Stock tickers such as DOCN (DigitalOcean), GRAB (Grab Holdings), and SMCI (Super Micro Computer) highlight a connection between traditional finance and crypto.  
