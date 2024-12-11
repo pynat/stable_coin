@@ -1,0 +1,44 @@
+# python cache files
+__pycache__/
+*.py[cod]
+node_modules/
+
+# virtual environment
+myenv/
+venv/
+.env
+*.env
+
+# jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# vs code settings
+.vscode/
+
+# mc files
+.DS_Store
+
+# Log files
+*.log
+logs/
+
+# files
+*.zip
+crypto.csv
+stocks.csv
+one_df.csv
+stablecoin.csv
+get_crypto.py
+get_stocks.py
+
+# machine learning/model files
+*.keras
+*.tflite
+*.h5
+*.pb
+*.onnx
+*.pth
+
+# Docker files
+docker-compose.override.yml
+*.temp
